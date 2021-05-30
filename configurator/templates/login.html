@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+</head>
+<body>
+<form class="login" method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    <div>
+        <h2>Login</h2>
+        {{ form.login }}
+        <h2>Password</h2>
+        {{ form.password }}
+    </div>
+    <button class="submit btn btn-outline-secondary" type="submit">Sign In</button>
+</form>
+</body>
+</html>
