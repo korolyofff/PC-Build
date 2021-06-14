@@ -1,0 +1,23 @@
+<div class="favorites-page">
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-xs-12">
+        <p class="text-xs-center text-bold-custom">{{ title }}</p>
+      </div>
+      <div class="article-rectangle" *ngFor="let favoriteItem of favoritesComponentsList">
+        <div class="image-article-title">
+          <img src="{{favoriteItem.PictureUrl}}" alt="">
+        </div>
+        <div class="text-block">
+          <a class="text-block-title" (click)="goToComponentCard(favoriteItem.ItemId)">
+            {{favoriteItem.Name}}
+          </a>
+          <p class="text-block-content">
+            От {{favoriteItem.Price}} руб.
+          </p>
+          <button class="button-with-image" (click)="removeFromFavorite(favoriteItem.ItemId)"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

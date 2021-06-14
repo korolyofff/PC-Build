@@ -1,0 +1,84 @@
+.article-rectangle {
+  width: 100%;
+  height: 270px;
+
+  background: var(--main-background-cell-favorites);
+
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+
+  border-radius: 15px;
+}
+
+.image-article-title {
+  position: relative;
+
+  height: auto;
+  width: auto;
+
+  margin-left: 15px;
+
+  min-width: 240px;
+  min-height: 240px;
+
+  background-color: white !important;
+
+  max-height: 240px;
+  overflow: hidden !important;
+  border-radius: 50%;
+}
+
+.image-article-title img {
+  position: absolute;
+  top: 25%;
+  margin-top: -0.625em;
+  width: 240px;
+}
+
+.text-block {
+  margin-left: 30px;
+  align-items: start !important;
+}
+
+.text-block-title {
+  margin-bottom: 10px;
+  margin-right: 80px;
+
+  text-decoration-line: underline;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 31px;
+
+
+}
+
+.text-block-content {
+  margin-top: 30px;
+  margin-right: 80px;
+  margin-bottom: 40px;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 32px;
+}
+
+.button-with-image {
+  font-size: 30px;
+  width: 1em;
+  height: 1em;
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+.button-with-image::before {
+  mask: url("~assets/resources/buttons/remove-items.svg") top left / cover;
+  background: #333;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+}

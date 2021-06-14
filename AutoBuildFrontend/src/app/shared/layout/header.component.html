@@ -1,0 +1,74 @@
+<nav class="navbar navbar-light">
+  <div class="container" style="margin-bottom: 100px;">
+    <a class="navbar-brand" routerLink="/">
+      <img src="./assets/main-logo.svg">
+    </a>
+
+    <!-- Show this for logged out users -->
+    <ul *appShowAuthed="false"
+      class="nav navbar-nav pull-xs-right">
+
+      <li class="nav-item">
+        <a class="nav-link text-normal-custom header-text"
+           routerLink="/advices">
+          Советы по сборке ПК
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-normal-custom header-text"
+          routerLink="/favorites">
+          Избранное
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link btn-default"
+          routerLink="/register"
+          routerLinkActive="active">
+          Регистрация
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link btn-primary"
+           routerLink="/login"
+           routerLinkActive="active">
+          Вход
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- Show this for logged in users -->
+    <ul *appShowAuthed="true"
+      class="nav navbar-nav pull-xs-right">
+
+      <li class="nav-item">
+        <a class="nav-link text-normal-custom header-text"
+          routerLink="/advices"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">
+          Советы по сборке ПК
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-normal-custom header-text"
+           routerLink="/favorites">
+          Избранное
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link btn-default"
+          [routerLink]="['/profile', currentUser.username]"
+          routerLinkActive="active">
+          {{ currentUser.username }}
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
